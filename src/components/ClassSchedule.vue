@@ -37,6 +37,12 @@ const props = defineProps<{
 </script>
 
 <style scoped>
+thead tr th {
+  position: sticky;
+  top: 0;
+  background-color: #fafafc;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -48,7 +54,7 @@ table {
 
 th,
 td {
-  padding: 10px 30px;
+  padding: 10px 40px;
   text-align: center;
 }
 
