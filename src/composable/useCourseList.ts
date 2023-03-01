@@ -1,31 +1,19 @@
-import { ref, watch } from "vue";
+import { useStorage } from "@vueuse/core";
 import { courseListMock } from "./mock/course-list";
 
 function useCourseList() {
-  const courseList = ref<Course[]>(courseListMock);
-  const data = localStorage.getItem("courseList");
-  if (data) {
-    courseList.value = JSON.parse(data);
-  }
+  const courseListState = useStorage("courseList", courseListMock);
 
   function addCourse(course: Course) {
-    course.id = courseList.value.length;
-    courseList.value.push(course);
+    course.id = courseListState.value.length;
+    courseListState.value.push(course);
   }
 
   function reset() {
-    courseList.value = courseListMock;
+    courseListState.value = courseListMock;
     localStorage.removeItem("courseList");
   }
 
-  watch(
-    courseList,
-    (newVal) => {
-      localStorage.setItem("courseList", JSON.stringify(newVal));
-    },
-    { deep: true }
-  );
-
-  return { courseList, addCourse, reset };
+  return { courseList: courseListState, addCourse, reset };
 }
 export { useCourseList };
