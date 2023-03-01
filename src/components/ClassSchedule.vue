@@ -40,7 +40,7 @@ const props = defineProps<{
 thead tr th {
   position: sticky;
   top: 0;
-  background-color: #fafafc;
+  background-color: var(--odd-row-background-color);
 }
 
 table {
@@ -60,10 +60,10 @@ td {
 
 .odd-row,
 thead tr {
-  background-color: #fafafc;
+  background-color: var(--odd-row-background-color);
 }
 
 .even-row {
-  background-color: #ffffff;
+  background-color: var(--even-row-background-color);
 }
 </style>

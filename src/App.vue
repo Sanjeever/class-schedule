@@ -85,7 +85,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5d5;
+  background-color: var(--background-color);
 }
 
 label,
@@ -98,12 +98,12 @@ button {
   border: none;
   border-radius: 10px;
   padding: 5px;
-  background-color: #eceded;
+  background-color: var(--button-background-color);
 }
 
 button:hover {
   transform: translateY(1px);
-  background-color: #afb6b6;
+  background-color: var(--button-hover-background-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 </style>

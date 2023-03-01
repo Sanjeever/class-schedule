@@ -1,3 +1,11 @@
+:root {
+  --background-color: #f5f5d5;
+  --button-background-color: #eceded;
+  --button-hover-background-color: #afb6b6;
+  --odd-row-background-color: #fafafc;
+  --even-row-background-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
