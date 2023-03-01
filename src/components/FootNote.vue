@@ -7,13 +7,10 @@
           Class-Schedule
         </a>
       </p>
-
       <p>Powered by <a href="https://vuejs.org" target="_blank">Vue.js</a></p>
     </footer>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped>
 footer {
