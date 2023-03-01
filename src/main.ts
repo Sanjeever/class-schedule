@@ -3,4 +3,8 @@ import App from "./App.vue";
 
 import "./assets/main.css";
 
-setTimeout(() => createApp(App).mount("#app"), 1000);
+const app = createApp(App);
+app.directive("focus", {
+  mounted: (el) => el.focus(),
+});
+setTimeout(() => app.mount("#app"), 1000);
