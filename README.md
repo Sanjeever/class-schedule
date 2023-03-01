@@ -23,3 +23,4 @@ pnpm build
 ## Thanks
 
 - [@vueuse/core](https://www.npmjs.com/package/@vueuse/core)
+- [animate.css](https://github.com/animate-css/animate.css)
