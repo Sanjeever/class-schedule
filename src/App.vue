@@ -2,7 +2,6 @@
 import { onMounted, reactive, ref } from "vue";
 import ClassSchedule from "./components/ClassSchedule.vue";
 import { useCourseList } from "./composable/useCourseList";
-import { emptyValue } from "./utils/object";
 
 const { courseList, addCourse, reset } = useCourseList();
 
@@ -12,6 +11,15 @@ const course: Course = reactive({
   bookName: "大数据技术原理与应用",
   credit: 4,
 });
+
+const initialCourse = (): Course => {
+  return {
+    id: 0,
+    name: "",
+    bookName: "",
+    credit: 0,
+  };
+};
 const hasError = ref(false);
 const courseNameInput = ref<HTMLInputElement>();
 
@@ -26,10 +34,10 @@ function addCourseHandler() {
     course.credit === 0
   ) {
     hasError.value = true;
-    emptyValue(course);
+    Object.assign(course, initialCourse());
   } else {
     addCourse({ ...course });
-    emptyValue(course);
+    Object.assign(course, initialCourse());
     hasError.value = false;
     courseNameInput.value?.focus();
   }

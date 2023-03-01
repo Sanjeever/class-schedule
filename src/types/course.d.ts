@@ -3,5 +3,4 @@ interface Course {
   name: string;
   bookName: string;
   credit: number;
-  [prop:string]:any
 }
