@@ -2,6 +2,7 @@
 import "animate.css";
 import { reactive, ref } from "vue";
 import ClassSchedule from "./components/ClassSchedule.vue";
+import FootNote from "./components/FootNote.vue";
 import { useCourseList } from "./composable/useCourseList";
 
 const { courseList, addCourse, reset } = useCourseList();
@@ -77,6 +78,7 @@ function resetHandler() {
         <button @click.prevent="resetHandler">重置</button>
       </form>
     </div>
+    <FootNote />
   </main>
 </template>
 
