@@ -103,6 +103,17 @@ button {
   margin: 0 5px;
 }
 
+input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+input:focus {
+  transform: translateY(1px) scale(1.01);
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
 button {
   border: none;
   border-radius: 10px;
@@ -110,7 +121,8 @@ button {
   background-color: var(--button-background-color);
 }
 
-button:hover {
+button:hover,
+button:focus {
   transform: translateY(1px);
   background-color: var(--button-hover-background-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
