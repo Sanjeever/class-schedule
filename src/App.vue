@@ -7,9 +7,9 @@ const { courseList, addCourse, reset } = useCourseList();
 
 const course: Course = reactive({
   id: 0,
-  name: "大数据技术原理与应用",
-  bookName: "大数据技术原理与应用",
-  credit: 4,
+  name: "Java 开发实训",
+  bookName: "Spring 实战（第 6 版）",
+  credit: 8,
 });
 
 const initialCourse = (): Course => {
