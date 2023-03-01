@@ -73,7 +73,11 @@ function resetHandler() {
         <label>书名</label>
         <input type="text" v-model="course.bookName" />
         <label>学分</label>
-        <input type="number" v-model="course.credit" />
+        <input
+          type="number"
+          v-model="course.credit"
+          @keyup.enter.prevent="addCourseHandler"
+        />
         <button>添加</button>
         <button @click.prevent="resetHandler">重置</button>
       </form>
