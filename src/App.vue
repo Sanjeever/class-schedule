@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "animate.css";
 import { reactive, ref } from "vue";
 import ClassSchedule from "./components/ClassSchedule.vue";
 import { useCourseList } from "./composable/useCourseList";
@@ -28,12 +29,15 @@ function addCourseHandler() {
     course.bookName.trim() === "" ||
     course.credit === 0
   ) {
+    if (hasError.value) {
+      return;
+    }
     hasError.value = true;
+    setTimeout(() => (hasError.value = false), 1000);
     Object.assign(course, initialCourse());
   } else {
     addCourse({ ...course });
     Object.assign(course, initialCourse());
-    hasError.value = false;
     courseNameInput.value?.focus();
   }
 }

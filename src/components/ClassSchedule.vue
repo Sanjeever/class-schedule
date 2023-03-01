@@ -2,7 +2,12 @@
   <div>
     <table>
       <caption>
-        <slot name="caption"></slot>
+        <Transition
+          enter-active-class="animate__animated animate__bounceIn"
+          leave-active-class="animate__animated animate__bounceOut"
+        >
+          <slot name="caption"></slot>
+        </Transition>
       </caption>
       <thead>
         <tr>
@@ -30,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import { Transition } from "vue";
 const props = defineProps<{
   header: string[];
   courseList: Course[];
