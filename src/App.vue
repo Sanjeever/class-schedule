@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from "vue";
+import { reactive, ref } from "vue";
 import ClassSchedule from "./components/ClassSchedule.vue";
 import { useCourseList } from "./composable/useCourseList";
 
@@ -22,10 +22,6 @@ const initialCourse = (): Course => {
 };
 const hasError = ref(false);
 const courseNameInput = ref<HTMLInputElement>();
-
-onMounted(() => {
-  courseNameInput.value?.focus();
-});
 
 function addCourseHandler() {
   if (
@@ -64,7 +60,12 @@ function resetHandler() {
 
       <form @submit.prevent="addCourseHandler">
         <label>课程名</label>
-        <input type="text" v-model="course.name" ref="courseNameInput" />
+        <input
+          v-focus
+          type="text"
+          v-model="course.name"
+          ref="courseNameInput"
+        />
         <label>书名</label>
         <input type="text" v-model="course.bookName" />
         <label>学分</label>
