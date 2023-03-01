@@ -12,14 +12,13 @@ const course: Course = reactive({
   credit: 8,
 });
 
-const initialCourse = (): Course => {
-  return {
-    id: 0,
-    name: "",
-    bookName: "",
-    credit: 0,
-  };
-};
+const initialCourse = (): Course => ({
+  id: 0,
+  name: "",
+  bookName: "",
+  credit: 0,
+});
+
 const hasError = ref(false);
 const courseNameInput = ref<HTMLInputElement>();
 
