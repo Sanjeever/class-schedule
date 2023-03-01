@@ -55,6 +55,7 @@ table {
   margin: 20px 0;
   max-height: 50vh;
   overflow: auto;
+  overflow-x: hidden;
   display: block;
 }
 
